@@ -3,12 +3,13 @@ Summary:	Docbook2man and docbook2info conversion tools
 Summary(pl):	Narzêdzia do konwersji docbook do man i info 
 Name:		docbook2X
 Version:	0
-Release:	3
+Release:	4
 License:	GPL
 Group:		Applications/Publishing/SGML
 Group(pl):	Aplikacje/Publikowanie/SGML
 Source0:	http://shell.ipoline.com/~elmert/hacks/docbook2X/%{name}.tar.gz
 Source1:	docbook2X-docbook2man
+Patch0:		%{name}-nls.patch
 Requires:	sgml-common
 Requires:	sgmlparser
 Requires:	docbook-dtd
@@ -18,16 +19,17 @@ BuildArch:	noarch
 
 %description
 Steve Cheng's docbook2man-spec conversion tools. Usage: docbook2man
-manpage.sgml Prints name(s) of created manpage(s), or some error
+manpage.sgml. Prints name(s) of created manpage(s), or some error
 messages.
 
 %description -l pl 
 Narzêdzia do konwersji docbook2man Steve Cheng'a. U¿ycie: docbook2man
-manpage.sgml Wypisuje nazwy stworzonych w bie¿±cym katalogu stron man,
+manpage.sgml. Wypisuje nazwy stworzonych w bie¿±cym katalogu stron man,
 lub komunikat o b³êdzie.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
