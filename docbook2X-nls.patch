@@ -1,0 +1,49 @@
+diff -Nur docbook2X/docbook2man-spec.pl docbook2X.new/docbook2man-spec.pl
+--- docbook2X/docbook2man-spec.pl	Sat Oct  2 16:35:18 1999
++++ docbook2X.new/docbook2man-spec.pl	Fri Jun 23 15:14:07 2000
+@@ -328,6 +328,14 @@
+ 	@manpage_names = ();
+ 	
+ 	$manpage_misc = '';
++
++	# check refentry's language
++	if(defined($_[0]->attribute('LANG')->value)) {
++	  $manpage_lang = $_[0]->attribute('LANG')->value;
++	}
++	else {
++	  $manpage_lang = '';
++	}
+ });
+ sgml('</REFENTRY>', sub {
+ 	if(!$newline_last) {
+@@ -434,7 +442,13 @@
+ 
+ 
+ # NAME section
+-man_sgml('<REFNAMEDIV>', "\n.SH NAME\n");
++#man_sgml('<REFNAMEDIV>', "\n.SH NAME\n");
++man_sgml('<REFNAMEDIV>', sub {
++	   if ($manpage_lang eq "pl") { man_output "\n.SH NAZWA\n"; }
++	   # waits for another languages
++	   #elsif ($manpage_lang eq "xx") { man_output "\n.SH xxxxxxx\n"; } 
++	   else { man_output "\n.SH NAME\n"; }
++});
+ 
+ sgml('<REFNAME>', \&save_cdata);
+ sgml('</REFNAME>', sub { 
+@@ -475,7 +489,14 @@
+ #
+ ########################################################################
+ 
+-man_sgml('<REFSYNOPSISDIV>', "\n.SH SYNOPSIS\n");
++#man_sgml('<REFSYNOPSISDIV>', "\n.SH SYNOPSIS\n");
++man_sgml('<REFSYNOPSISDIV>', sub {
++	   if ($manpage_lang eq "pl") { man_output "\n.SH SK£ADNIA\n"; }
++	   # waits for another languages
++	   #elsif ($manpage_lang eq "xx") { man_output "\n.SH xxxxxxx\n"; } 
++	   else { man_output "\n.SH SYNOPSIS\n"; }
++});   
++
+ man_sgml('</REFSYNOPSISDIV>', "\n");
+ 
+ ## FIXME! Must be made into block elements!!
