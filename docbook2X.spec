@@ -17,8 +17,16 @@ BuildRoot:	/tmp/%{name}-%{version}-root
 BuildArch:	noarch
 
 %description
+Steve Cheng's docbook2man-spec conversion tools
+Usage: docbook2man manpage.sgml
+Prints name(s) of created manpage(s), or some
+error messages.
 
 %description -l pl 
+Narzêdzia do konwersji docbook2man Steve Cheng'a
+U¿ycie: docbook2man manpage.sgml
+Wypisuje nazwy stworzonych w bie¿±cym katalogu stron man, lub
+komunikat o b³êdzie.
 
 %prep
 %setup -q -n %{name}
