@@ -2,7 +2,7 @@
 # $Revision$, $Date$ 
 
 # simple script that converts SGML-docbook references
-# using Steve Chengs docbooc2man-spec perl converter
+# using Steve Cheng's docbooc2man-spec perl converter
 # in case of <refentry lang="pl"> translates NAME and SYNOPSIS
 
 DIR="/usr/share/docbook2X"
@@ -65,4 +65,7 @@ awk '{print $2}' manpage.links
 #rm -f manpage.links
 
 
-# $Log$  
+# $Log$
+# Revision 1.1  1999/12/29 15:59:47  klakier
+# - wrapper script for Steve Cheng's docbook2man-spec converter
+#  
