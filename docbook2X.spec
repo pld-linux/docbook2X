@@ -3,7 +3,7 @@ Summary:	Docbook2man and docbook2info conversion tools
 Summary(pl):	Narzêdzia do konwersji docbook do man i info
 Name:		docbook2X
 Version:	0.8.5
-Release:	2
+Release:	3
 License:	MIT
 Group:		Applications/Publishing/SGML
 Source0:	http://dl.sourceforge.net/docbook2x/%{name}-%{version}.tar.gz
@@ -17,7 +17,6 @@ BuildRequires:	perl-XML-SAX
 Requires:	docbook-dtd
 Requires:	sgml-common
 Requires:	sgmlparser
-BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
