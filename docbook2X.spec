@@ -2,17 +2,17 @@
 Summary:	Docbook2man and docbook2info conversion tools
 Summary(pl):	Narzêdzia do konwersji docbook do man i info
 Name:		docbook2X
-Version:	0.6
-Release:	3
+Version:	0.8.2
+Release:	1
 License:	GPL
 Group:		Applications/Publishing/SGML
-Source0:	http://shell.ipoline.com/~elmert/hacks/docbook2X/%{name}.tar.gz
-# Source0-md5:	cb234c10b597aefcec2ec0cc5467b4e5
+Source0:	http://dl.sourceforge.net/docbook2x/%{name}-%{version}.tar.gz
+# Source0-md5:	60e9837d7f4f343f567a5da499d13be0
 Source1:	%{name}-docbook2man
 Requires:	sgml-common
 Requires:	sgmlparser
 Requires:	docbook-dtd
-URL:		http://shell.ipoline.com/~elmert/hacks/docbook2X/
+URL:		http://docbook2x.sourceforge.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
 
@@ -27,22 +27,35 @@ manpage.sgml. Wypisuje nazwy stworzonych w bie¿±cym katalogu stron
 man, lub komunikat o b³êdzie.
 
 %prep
-%setup -q -n %{name}
+%setup -q
+
+%build
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
+%configure
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_datadir}/%{name},%{_bindir}}
+#install -d $RPM_BUILD_ROOT{%{_datadir}/%{name},%{_bindir}}
 
-install  *spec.pl *links.pl $RPM_BUILD_ROOT%{_datadir}/%{name}
-install  %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/docbook2man
+#install  *spec.pl *links.pl $RPM_BUILD_ROOT%{_datadir}/%{name}
+#install  %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/docbook2man
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%doc *.html
 %dir %{_datadir}/%{name}
-%{_datadir}/%{name}/*spec.pl
-%attr(755,root,root) %{_datadir}/%{name}/*links.pl
+%{_infodir}/*
+%{_datadir}/%{name}/*
+%{_mandir}/man1/*
+%{perl_vendorarch}/*
+%{perl_vendorlib}/XML/Handler/*
 %attr(755,root,root) %{_bindir}/*
