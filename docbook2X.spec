@@ -41,21 +41,16 @@ man, lub komunikat o b³êdzie.
 rm -rf $RPM_BUILD_ROOT
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-#install -d $RPM_BUILD_ROOT{%{_datadir}/%{name},%{_bindir}}
-
-#install  *spec.pl *links.pl $RPM_BUILD_ROOT%{_datadir}/%{name}
-#install  %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/docbook2man
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.html
+%doc doc/*.html
 %dir %{_datadir}/%{name}
 %{_infodir}/*
 %{_datadir}/%{name}/*
 %{_mandir}/man1/*
-%{perl_vendorarch}/*
-%{perl_vendorlib}/XML/Handler/*
+%{perl_archlib}/auto/XML/Handler/*
+%{perl_privlib}/XML/Handler/*
 %attr(755,root,root) %{_bindir}/*
