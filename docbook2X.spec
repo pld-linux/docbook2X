@@ -32,8 +32,7 @@ lub komunikat o b³êdzie.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT%{_datadir}/%{name}
-install -d $RPM_BUILD_ROOT%{_bindir}
+install -d $RPM_BUILD_ROOT{%{_datadir}/%{name},%{_bindir}}
 
 install  *spec.pl *links.pl $RPM_BUILD_ROOT%{_datadir}/%{name}
 install  %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/docbook2man
