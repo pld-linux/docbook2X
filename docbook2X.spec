@@ -3,7 +3,7 @@ Summary:	Docbook2man and docbook2info conversion tools
 Summary(pl):	Narzêdzia do konwersji docbook do man i info 
 Name:		docbook2X
 Version:	0.6
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/Publishing/SGML
 Group(de):	Applikationen/Publizieren/SGML
