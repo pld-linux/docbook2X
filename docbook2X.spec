@@ -13,7 +13,7 @@ Requires:	sgml-common
 Requires:	sgmlparser
 Requires:	docbook
 URL:		http://shell.ipoline.com/~elmert/hacks/docbook2X/	
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
 
 %description
@@ -41,7 +41,6 @@ install  %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}/docbook2man
 
 %clean
 rm -rf $RPM_BUILD_ROOT
-
 
 %files
 %defattr(644,root,root,755)
