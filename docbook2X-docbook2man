@@ -1,0 +1,68 @@
+#!/bin/sh
+# $Revision$, $Date$ 
+
+# simple script that converts SGML-docbook references
+# using Steve Chengs docbooc2man-spec perl converter
+# in case of <refentry lang="pl"> translates NAME and SYNOPSIS
+
+DIR="/usr/share/docbook2X"
+SPEC=$DIR/docbook2man-spec.pl
+MKLINKS=$DIR/manpage_makelinks.pl
+
+
+if [ $# -eq 0 ]; then
+        echo "$0: No input file given";
+        exit;
+fi
+if [ $# -gt 1 ]; then
+        echo "$0: Too many arguments";
+        exit;
+fi
+
+if [ -x /usr/bin/onsgmls ]; then
+        SP=onsgmls;              
+else if [ -x /usr/bin/nsgmls ]; then
+        SP=nsgmls;              
+else
+        echo "$0: SGML parser missing";
+        exit;
+fi
+fi
+
+rm -f manpage.links
+$SP <"$1" |sgmlspl $SPEC
+
+LANGM=`awk -v IGNORECASE=1 -v RS=">[^<>]*<" '/^refentry/ {if(i=index($0,"lang=")) print substr($0,i+6,2); exit}' $1`
+REFNAME=`awk -v IGNORECASE=1 -v RS="<\/?refname( [^>]*)?>" '{getline; print $0; exit}' $1`
+if [ -z "$REFNAME" ]; then
+	echo "$0: <refname> element missing"
+	exit;
+fi
+SECTION=`awk -v IGNORECASE=1 -v RS="<\/?manvolnum( [^>]*)?>" '{getline; print $0; exit}' $1`
+MAINFILE=${REFNAME}.${SECTION}
+
+if [ ! -f "$MAINFILE" ]; then
+	echo "$0: Failed to convert manpage";
+	exit;
+fi
+
+# print main manpage name
+echo $MAINFILE
+
+case "$LANGM" in
+    "pl" )
+	mv $MAINFILE $MAINFILE.tmp
+        cat $MAINFILE.tmp |sed 's/^\.SH NAME$/\.SH NAZWA/' \
+                        |sed 's/^\.SH SYNOPSIS$/\.SH SK£ADNIA/' >$MAINFILE;
+	rm -f $MAINFILE.tmp;
+        ;;
+esac
+
+# make man links if exist
+$MKLINKS < manpage.links
+awk '{print $2}' manpage.links
+
+#rm -f manpage.links
+
+
+# $Log$  
