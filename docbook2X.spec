@@ -6,8 +6,6 @@ Version:	0.6
 Release:	3
 License:	GPL
 Group:		Applications/Publishing/SGML
-Group(de):	Applikationen/Publizieren/SGML
-Group(pl):	Aplikacje/Publikowanie/SGML
 Source0:	http://shell.ipoline.com/~elmert/hacks/docbook2X/%{name}.tar.gz
 Source1:	%{name}-docbook2man
 Requires:	sgml-common
