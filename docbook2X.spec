@@ -2,14 +2,13 @@
 Summary:	Docbook2man and docbook2info conversion tools
 Summary(pl):	Narzêdzia do konwersji docbook do man i info 
 Name:		docbook2X
-Version:	0
-Release:	4
+Version:	0.6
+Release:	1
 License:	GPL
 Group:		Applications/Publishing/SGML
 Group(pl):	Aplikacje/Publikowanie/SGML
 Source0:	http://shell.ipoline.com/~elmert/hacks/docbook2X/%{name}.tar.gz
 Source1:	docbook2X-docbook2man
-Patch0:		%{name}-nls.patch
 Requires:	sgml-common
 Requires:	sgmlparser
 Requires:	docbook-dtd
@@ -29,7 +28,6 @@ lub komunikat o b³êdzie.
 
 %prep
 %setup -q -n %{name}
-%patch0 -p1
 
 %install
 rm -rf $RPM_BUILD_ROOT
