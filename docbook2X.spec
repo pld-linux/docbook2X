@@ -47,10 +47,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc doc/*.html
-%dir %{_datadir}/%{name}
-%{_infodir}/*
-%{_datadir}/%{name}/*
-%{_mandir}/man1/*
-%{perl_archlib}/auto/XML/Handler/*
-%{perl_privlib}/XML/Handler/*
 %attr(755,root,root) %{_bindir}/*
+%{_datadir}/%{name}
+%{perl_privlib}/XML/Handler/Templates.pm
+%{_mandir}/man1/*
+%{_infodir}/*.info*
