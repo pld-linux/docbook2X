@@ -7,6 +7,7 @@ Release:	3
 License:	GPL
 Group:		Applications/Publishing/SGML
 Source0:	http://shell.ipoline.com/~elmert/hacks/docbook2X/%{name}.tar.gz
+# Source0-md5:	cb234c10b597aefcec2ec0cc5467b4e5
 Source1:	%{name}-docbook2man
 Requires:	sgml-common
 Requires:	sgmlparser
