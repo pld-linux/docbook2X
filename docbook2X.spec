@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Docbook2man and docbook2info conversion tools
-Summary(pl):	Narzêdzia do konwersji docbook do man i info 
+Summary(pl):	Narzêdzia do konwersji docbook do man i info
 Name:		docbook2X
 Version:	0.6
 Release:	3
@@ -11,7 +11,7 @@ Source1:	%{name}-docbook2man
 Requires:	sgml-common
 Requires:	sgmlparser
 Requires:	docbook-dtd
-URL:		http://shell.ipoline.com/~elmert/hacks/docbook2X/	
+URL:		http://shell.ipoline.com/~elmert/hacks/docbook2X/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildArch:	noarch
 
@@ -20,7 +20,7 @@ Steve Cheng's docbook2man-spec conversion tools. Usage: docbook2man
 manpage.sgml. Prints name(s) of created manpage(s), or some error
 messages.
 
-%description -l pl 
+%description -l pl
 Narzêdzia do konwersji docbook2man Steve Cheng'a. U¿ycie: docbook2man
 manpage.sgml. Wypisuje nazwy stworzonych w bie¿±cym katalogu stron
 man, lub komunikat o b³êdzie.
