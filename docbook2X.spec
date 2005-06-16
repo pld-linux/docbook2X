@@ -14,6 +14,8 @@ URL:		http://docbook2x.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	perl-XML-SAX
+BuildRequires:	perl-devel
+BuildRequires:	texinfo
 Requires:	docbook-dtd
 Requires:	sgml-common
 Requires:	sgmlparser
