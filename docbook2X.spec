@@ -2,12 +2,12 @@
 Summary:	Docbook2man and docbook2info conversion tools
 Summary(pl):	Narzêdzia do konwersji docbook do man i info
 Name:		docbook2X
-Version:	0.8.5
-Release:	4
+Version:	0.8.6
+Release:	1
 License:	MIT
 Group:		Applications/Publishing/SGML
 Source0:	http://dl.sourceforge.net/docbook2x/%{name}-%{version}.tar.gz
-# Source0-md5:	05d549646ac11caba6c7f1e07ced33e3
+# Source0-md5:	fd5efad56674cfb22ea4831845c3c937
 # note: Source1 not used now
 Source1:	%{name}-docbook2man
 URL:		http://docbook2x.sourceforge.net/
@@ -17,7 +17,6 @@ BuildRequires:	perl-XML-SAX
 BuildRequires:	perl-devel
 BuildRequires:	texinfo
 Requires:	docbook-dtd
-Requires:	perl-XML-SAX
 Requires:	sgml-common
 Requires:	sgmlparser
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -32,8 +31,6 @@ DocBooka na strony manuala i dokumenty Texinfo.
 
 %prep
 %setup -q
-
-%{__perl} -pi -e 's/install_perl/install_vendor/' perl/Makefile.am
 
 %build
 %{__aclocal}
@@ -57,6 +54,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS COPYING ChangeLog README THANKS TODO doc/*.html
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
-%{perl_vendorlib}/XML/Handler/SGMLSpl.pm
 %{_mandir}/man1/*
 %{_infodir}/*.info*
