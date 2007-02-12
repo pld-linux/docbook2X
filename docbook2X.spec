@@ -1,6 +1,6 @@
 %include	/usr/lib/rpm/macros.perl
 Summary:	Docbook2man and docbook2info conversion tools
-Summary(pl):	Narzêdzia do konwersji docbook do man i info
+Summary(pl.UTF-8):   NarzÄ™dzia do konwersji docbook do man i info
 Name:		docbook2X
 Version:	0.8.7
 Release:	1
@@ -25,8 +25,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Steve Cheng's docbook2X tools convert DocBook documents into man pages
 and Texinfo documents.
 
-%description -l pl
-Narzêdzia do konwersji docbook2X Steve'a Chenga konwertuj± dokumenty
+%description -l pl.UTF-8
+NarzÄ™dzia do konwersji docbook2X Steve'a Chenga konwertujÄ… dokumenty
 DocBooka na strony manuala i dokumenty Texinfo.
 
 %prep
