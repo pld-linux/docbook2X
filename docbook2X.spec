@@ -6,7 +6,7 @@ Version:	0.8.8
 Release:	1
 License:	MIT
 Group:		Applications/Publishing/SGML
-Source0:	http://osdn.dl.sourceforge.net/docbook2x/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/docbook2x/%{name}-%{version}.tar.gz
 # Source0-md5:	b9b76a6af198c4f44574cfd17a322f01
 # note: Source1 not used now
 Source1:	%{name}-docbook2man
