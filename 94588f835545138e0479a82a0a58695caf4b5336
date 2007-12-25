@@ -1,0 +1,5 @@
+- updated to 0.8.2
+- fixed source0 and url (it is now hosted on sourceforge.net)
+- fixed %prep (use autothingies)
+- use make install
+- fixed %files a bit
