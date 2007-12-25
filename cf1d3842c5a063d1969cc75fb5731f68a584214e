@@ -1,0 +1,5 @@
+- previous commit was by mistake - the spec was not finished
+- fixed previous changelog entry
+- cleanups in %install
+- fixed %files
+- it now builds
