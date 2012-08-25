@@ -1,0 +1,51 @@
+Patch only .info not the sources for now (whole regeneration breaks things)
+#--- docbook2X-0.8.8/doc/docbook2X.xml.orig	2006-04-22 17:55:28.000000000 +0200
+#+++ docbook2X-0.8.8/doc/docbook2X.xml	2012-08-25 06:54:03.633416059 +0200
+#@@ -55,7 +55,7 @@
+#     </abstract>
+# 
+#     <subjectset scheme="texinfo-directory">
+#-      <subject><subjectterm>Document Preparation</subjectterm></subject>
+#+      <subject><subjectterm>Text Processing Tools</subjectterm></subject>
+#     </subjectset>
+#     
+#   </articleinfo>
+#--- docbook2X-0.8.8/doc/docbook2X.txml.orig	2007-03-03 14:40:43.000000000 +0100
+#+++ docbook2X-0.8.8/doc/docbook2X.txml	2012-08-25 06:54:04.810082702 +0200
+#@@ -45,7 +45,7 @@
+# <nodenamemapentry id="install-procedure" file="docbook2X"><nodename>Installation</nodename></nodenamemapentry>
+# <nodenamemapentry id="install-problems" file="docbook2X"><nodename>Installation problems</nodename></nodenamemapentry>
+# <nodenamemapentry id="dependencies" file="docbook2X"><nodename>Dependencies on other software</nodename></nodenamemapentry>
+#-<nodenamemapentry id="cindex" file="docbook2X"><nodename>Concept index</nodename></nodenamemapentry></nodenamemap><texinfo file="docbook2X"><settitle>docbook2X</settitle><directory category="Document Preparation"><menuentry file="docbook2X"><menuentrytitle>docbook2X</menuentrytitle><menuentrydescrip>Convert DocBook into man pages and Texinfo</menuentrydescrip></menuentry></directory><node id="docbook2X" previousid="" nextid="quickstart"/><documentlanguage lang="en"/><top>docbook2X</top><indexterm class="cp">DocBook</indexterm><para>
+#+<nodenamemapentry id="cindex" file="docbook2X"><nodename>Concept index</nodename></nodenamemapentry></nodenamemap><texinfo file="docbook2X"><settitle>docbook2X</settitle><directory category="Text Processing Tools"><menuentry file="docbook2X"><menuentrytitle>docbook2X</menuentrytitle><menuentrydescrip>Convert DocBook into man pages and Texinfo</menuentrydescrip></menuentry></directory><node id="docbook2X" previousid="" nextid="quickstart"/><documentlanguage lang="en"/><top>docbook2X</top><indexterm class="cp">DocBook</indexterm><para>
+#     <i>docbook2X</i> converts 
+#     DocBook
+#     documents into man pages and 
+#--- docbook2X-0.8.8/doc/docbook2X.texi.orig	2007-03-03 14:40:45.000000000 +0100
+#+++ docbook2X-0.8.8/doc/docbook2X.texi	2012-08-25 06:54:25.816748930 +0200
+#@@ -2,9 +2,9 @@
+# @setfilename docbook2X.info
+# @documentencoding us-ascii
+# @settitle docbook2X
+#-@dircategory Document Preparation
+#+@dircategory Text Processing Tools:
+# @direntry
+#-* docbook2X: (docbook2X).       Convert DocBook into man pages and Texinfo
+#+* docbook2X: (docbook2X).		Convert DocBook into man pages and Texinfo
+# @end direntry
+# 
+# @node Top, Quick start, , (dir)
+--- docbook2X-0.8.8/doc/docbook2X.info.orig	2007-03-03 14:40:45.000000000 +0100
++++ docbook2X-0.8.8/doc/docbook2X.info	2012-08-25 07:57:11.233337113 +0200
+@@ -1,9 +1,9 @@
+ This is docbook2X.info, produced by makeinfo version 4.8 from
+ docbook2X.texi.
+ 
+-INFO-DIR-SECTION Document Preparation
++INFO-DIR-SECTION Text Processing Tools:
+ START-INFO-DIR-ENTRY
+-* docbook2X: (docbook2X).       Convert DocBook into man pages and Texinfo
++* docbook2X: (docbook2X).		Convert DocBook into man pages and Texinfo
+ END-INFO-DIR-ENTRY
+ 
+ 
