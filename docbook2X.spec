@@ -3,7 +3,7 @@ Summary:	Docbook2man and docbook2info conversion tools
 Summary(pl.UTF-8):	Narzędzia do konwersji docbook do man i info
 Name:		docbook2X
 Version:	0.8.8
-Release:	5
+Release:	6
 License:	MIT
 Group:		Applications/Publishing/SGML
 Source0:	http://dl.sourceforge.net/docbook2x/%{name}-%{version}.tar.gz
@@ -58,6 +58,12 @@ mv $RPM_BUILD_ROOT%{_mandir}/man1/{docbook2texi,docbook2X2texi}.1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post	-p /sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
+
+%postun	-p /sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
 
 %files
 %defattr(644,root,root,755)
