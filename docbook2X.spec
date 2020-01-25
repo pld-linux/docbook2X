@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.perl
 Summary:	Docbook2man and docbook2info conversion tools
 Summary(pl.UTF-8):	Narzędzia do konwersji docbook do man i info
 Name:		docbook2X
