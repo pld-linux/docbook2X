@@ -17,6 +17,7 @@ BuildRequires:	perl-XML-SAX
 BuildRequires:	perl-devel
 BuildRequires:	texinfo
 Requires:	docbook-dtd
+Requires:	libxslt-progs
 Requires:	sgml-common
 Requires:	sgmlparser
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
