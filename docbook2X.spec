@@ -2,7 +2,7 @@ Summary:	Docbook2man and docbook2info conversion tools
 Summary(pl.UTF-8):	Narzędzia do konwersji docbook do man i info
 Name:		docbook2X
 Version:	0.8.8
-Release:	6
+Release:	7
 License:	MIT
 Group:		Applications/Publishing/SGML
 Source0:	http://dl.sourceforge.net/docbook2x/%{name}-%{version}.tar.gz
