@@ -13,6 +13,7 @@ Patch0:		%{name}-info.patch
 URL:		http://docbook2x.sourceforge.net/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
+BuildRequires:	libxslt-progs
 BuildRequires:	perl-XML-SAX
 BuildRequires:	perl-devel
 BuildRequires:	texinfo
