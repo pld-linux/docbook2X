@@ -16,6 +16,7 @@ BuildRequires:	automake
 BuildRequires:	libxslt-progs
 BuildRequires:	perl-XML-SAX
 BuildRequires:	perl-devel
+BuildRequires:	rpm-perlprov
 BuildRequires:	texinfo
 Requires:	docbook-dtd
 Requires:	libxslt-progs
